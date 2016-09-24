@@ -153,7 +153,7 @@ h1,h2,h3,h4,h5,h6 {
     font-size:2em;
     -webkit-transition:all .3s;
     -moz-transition:all .3s;
-    transition:all .3s
+    transition:all .3s;
 }
 
 .navbar-default .navbar-nav>.active>a { border-radius:3px }
