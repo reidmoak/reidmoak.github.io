@@ -168,13 +168,13 @@
             </div>
             <!--<div class="row">
                 <div class="col-md-4 col-sm-4 portfolio-item">
-                    <a href="#portfolioModal9" class="portfolio-link" data-toggle="modal" onclick="vReset()">
+                    <a href="#portfolioModal9" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="/images/" class="img-responsive" alt="">
+                        <img src="/images/StormRendering.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Team Storm</h4>
@@ -182,7 +182,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 portfolio-item">
-                    <a href="#portfolioModal8" class="portfolio-link" data-toggle="modal" onclick="vReset()">
+                    <a href="#portfolioModal8" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -196,13 +196,13 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 portfolio-item">
-                    <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal" onclick="vReset()">
+                    <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal" onclick="drumReset()">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="/images/" class="img-responsive" alt="">
+                        <img src="/images/drumpadsolidworks.PNG" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>DrumPad</h4>
@@ -727,13 +727,24 @@
                             <!-- Project Details -->
                             <h2>DrumPad</h2>
                             <p class="item-intro text-muted">ESE 190: Silicon Garage</p>
-                            <img class="img-responsive img-centered" src="/images/CrossbowResized.png" alt="">
-                            <p>BLAH BLAH BLAH</p>
-                            <p>
-                            </p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            <img id="drumImg0" class="img-responsive img-centered" src="/images/drumpadsolidworks.PNG" alt="">
+                            <p>For my final project in ESE 190, a course focused on hardware "hacking" and tinkering with Arduino, my teammate and I created a portable drum beat recording device. Essentially, the user would press the red push-button switch to start recording, tap on the pads to create a beat, and press the switch again to stop recording. Once recording was complete, the microcontroller within the casing would process each tap as either a "soft" or "hard" hit and then send the recorded beat to a local server where it could be played back and listened to by the user.</p>
+                            <p>The electronics of the device consisted of an Arduino microcontroller, two rectangular pressure sensors, and a push-button switch, all housed within several layers of lasercut material. The pressure sensors were used to measure the intensity of each hit, whereafter the Arduino code would process these values and map each tap to the sound corresponding to either the low or high option (2 per pad). By the time the project was complete, we had created a device capable of recording simple drum beats with 4 different sounds (i.e., bass drum, snare drum, hi-hat, tom drum) and playing them back in real time.</p>
+                            <p></p>
                         </div>
                     </div>
+                </div>
+                <!-- Thumbnails -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img id="drumImg1" class="img-responsive img-centered thumbpic" src="/images/drumpadsolidworks.PNG" onclick="drumAction(1)">
+                    </div>
+                    <div class="col-sm-6">
+                        <img id="drumImg2" class="img-responsive img-centered thumbpic" src="/images/drumpadseethroughthumb.PNG" onclick="drumAction(2)">
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                 </div>
             </div>
         </div>
@@ -783,7 +794,7 @@
                             <!-- Project Details -->
                             <h2>Smart Stormwater Trash Management System</h2>
                             <p class="item-intro text-muted">MEAM Senior Design - Team Storm</p>
-                            <img class="img-responsive img-centered" src="/images/CrossbowResized.png" alt="">
+                            <img class="img-responsive img-centered" src="/images/StormRendering.png" alt="">
                             <p>BLAH BLAH BLAH</p>
                             <p>
                             </p>
@@ -877,6 +888,24 @@
                 document.getElementById("sImg0").src = document.getElementById("sImg2").src;
             } else if (pos == 3) {
                 document.getElementById("sImg0").src = document.getElementById("sImg3").src;
+            }
+        }
+    </script>
+    
+    <script> // DrumPad Modal Script
+        
+        // Function to reset the photos for the DrumPad modal
+        function drumReset() {
+            document.getElementById("drumImg0").src = "/images/drumpadsolidworks.PNG";
+        }
+        
+        // Function to activate clickable thumbnails
+        function drumAction(pos) {
+            // Depending on which thumbnail is chosen, set main image to new image
+            if (pos == 1) { 
+                document.getElementById("drumImg0").src = document.getElementById("drumImg1").src;
+            } else if (pos == 2) {
+                document.getElementById("drumImg0").src = document.getElementById("drumImg2").src;
             }
         }
     </script>
